@@ -6,6 +6,43 @@
   <title>
    SynergyCon
   </title>
+  <style>
+body {
+      font-family: "Poppins", sans-serif;
+      background-color: #f8fafc;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+    }
+
+    .video-container {
+      position: relative;
+      width: 90%;
+      max-width: 900px;
+      overflow: hidden;
+      border-radius: 12px;
+      box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+      background: #000;
+    }
+
+    /* Maintain a 16:9 aspect ratio */
+    .video-container::before {
+      content: "";
+      display: block;
+      padding-top: 56.25%;
+    }
+
+    .video-container iframe {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      border: 0;
+    }
+  </style>
   <link href="images/favicon.png" rel="shortcut icon" type="image/x-icon"/>
   <link href="css/bootstrap.min.css" rel="stylesheet"/>
   <link href="css/plugin.css" rel="stylesheet"/>
@@ -293,7 +330,16 @@
    </div>
   </section>
 
-
+ <div class="video-container">
+    <iframe
+      src="https://www.youtube-nocookie.com/embed/VIDEO_ID?rel=0"
+      title="Your Video Title"
+      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+      allowfullscreen
+      loading="lazy"
+      referrerpolicy="no-referrer-when-downgrade">
+    </iframe>
+  </div>
   <section class="partners">
    <div class="container">
     <div class="partner-inner">
