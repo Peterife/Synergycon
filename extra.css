@@ -36,3 +36,81 @@
   border: 0;
   border-radius: 16px;
 }
+
+
+section.quotes-section {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 80px 20px;
+      background: linear-gradient(to bottom right, #ffffff, #f8fafc);
+    }
+
+    .slideshow-container {
+      position: relative;
+      background: white;
+      width: 400px;
+      padding: 2rem;
+      border-radius: 1rem;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+      text-align: center;
+    }
+
+    .section-title {
+      text-align: center;
+      font-size: 1.75rem;
+      font-weight: 600;
+      color: #0f172a;
+      margin-bottom: 2rem;
+    }
+
+    .quote {
+      display: none;
+      animation: fade 0.8s ease;
+    }
+
+    .quote.active {
+      display: block;
+    }
+
+    @keyframes fade {
+      from { opacity: 0; transform: translateY(10px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    .quote img {
+      width: 80px;
+      height: 80px;
+      border-radius: 50%;
+      margin-bottom: 1rem;
+    }
+
+    .quote-text {
+      font-style: italic;
+      color: #334155;
+      margin-bottom: 0.5rem;
+    }
+
+    .speaker {
+      font-weight: 600;
+      color: #0f172a;
+    }
+
+    .dots {
+      margin-top: 1rem;
+    }
+
+    .dot {
+      height: 12px;
+      width: 12px;
+      margin: 0 4px;
+      background-color: #cbd5e1;
+      border-radius: 50%;
+      display: inline-block;
+      cursor: pointer;
+      transition: background-color 0.3s;
+    }
+
+    .dot.active {
+      background-color: #1e293b;
+    }
