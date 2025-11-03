@@ -1,14 +1,4 @@
 
-body {
-      font-family: "Poppins", sans-serif;
-      background-color: #f8fafc;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      height: 100vh;
-      margin: 0;
-    }
-
     .video-container {
       position: relative;
       width: 90%;
