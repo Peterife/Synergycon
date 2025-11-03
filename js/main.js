@@ -1,44 +1,45 @@
 (function($) {
   "use strict";
-  document.addEventListener('DOMContentLoaded', function() {
-    const days = document.getElementById('days');
-    const hours = document.getElementById('hours');
-    const minutes = document.getElementById('minutes');
-    const seconds = document.getElementById('seconds');
-    const elementsExist = days && hours && minutes && seconds;
+document.addEventListener('DOMContentLoaded', function() {
+  const days = document.getElementById('days');
+  const hours = document.getElementById('hours');
+  const minutes = document.getElementById('minutes');
+  const seconds = document.getElementById('seconds');
+  const elementsExist = days && hours && minutes && seconds;
     if (!elementsExist) {
       console.warn('One or more countdown elements not found.');
       return;
     }
 
     // Set target time to a past date to immediately show 00
-    const currentTime = new Date();
-    const targetTime = new Date(currentTime.getTime() - 1000); // 1 second in the past
+  const targetTime = new Date('February 6, 2026 00:00:00').getTime();
 
-    function updateCountdown() {
-      const diff = targetTime - new Date();
-      if (diff <= 0) {
-        if (days) days.innerHTML = '00';
-        if (hours) hours.innerHTML = '00';
-        if (minutes) minutes.innerHTML = '00';
-        if (seconds) seconds.innerHTML = '00';
-        return;
-      }
-      const d = Math.floor(diff / 1000 / 60 / 60 / 24);
-      const h = Math.floor((diff / 1000 / 60 / 60) % 24);
-      const m = Math.floor((diff / 1000 / 60) % 60);
-      const s = Math.floor((diff / 1000) % 60);
-      if (days) days.innerHTML = d;
-      if (hours) hours.innerHTML = h < 10 ? '0' + h : h;
-      if (minutes) minutes.innerHTML = m < 10 ? '0' + m : m;
-      if (seconds) seconds.innerHTML = s < 10 ? '0' + s : s;
+  function updateCountdown() {
+    const now = new Date().getTime();
+    const diff = targetTime - now;
+    
+    if (diff <= 0) {
+      days.innerHTML = '00';
+      hours.innerHTML = '00';
+      minutes.innerHTML = '00';
+      seconds.innerHTML = '00';
+      return;
     }
 
-    updateCountdown();
-    setInterval(updateCountdown, 1000);
+    const d = Math.floor(diff / (1000 * 60 * 60 * 24));
+    const h = Math.floor((diff / (1000 * 60 * 60)) % 24);
+    const m = Math.floor((diff / (1000 * 60)) % 60);
+    const s = Math.floor((diff / 1000) % 60);
 
-  });
+    days.innerHTML = d;
+    hours.innerHTML = h < 10 ? '0' + h : h;
+    minutes.innerHTML = m < 10 ? '0' + m : m;
+    seconds.innerHTML = s < 10 ? '0' + s : s;
+  }
 
+  updateCountdown();
+  setInterval(updateCountdown, 1000);
+});
   // Rest of your code stays the same
   let valueDisplays = document.querySelectorAll(".num");
   let interval = 4000;
