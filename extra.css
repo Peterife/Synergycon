@@ -38,30 +38,32 @@
 }
 
 
-section.quotes-section {
+    section.quotes-section {
       display: flex;
-      justify-content: center;
+      flex-direction: column;
       align-items: center;
+      justify-content: center;
       padding: 80px 20px;
       background: linear-gradient(to bottom right, #ffffff, #f8fafc);
     }
 
-    .slideshow-container {
-      position: relative;
-      background: white;
-      width: 400px;
-      padding: 2rem;
-      border-radius: 1rem;
-      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
-      text-align: center;
-    }
-
     .section-title {
-      text-align: center;
       font-size: 1.75rem;
       font-weight: 600;
       color: #0f172a;
       margin-bottom: 2rem;
+      text-align: center;
+    }
+
+    .slideshow-container {
+      position: relative;
+      background: #fff;
+      width: 400px;
+      max-width: 90%;
+      padding: 2rem;
+      border-radius: 1rem;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+      text-align: center;
     }
 
     .quote {
